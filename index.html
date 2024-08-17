@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রানের মানিকগঞ্জ অ্যাপ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #f7f7f7;
+            background-color: #e74c3c;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 30px;
+        }
+
+        .outer-container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #ffeb3b;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: fadeInText 1s ease-in-out, colorChange 3s infinite alternate;
+        }
+
+        p, li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #a5d6a7;
+            margin-bottom: 20px;
+            animation: fadeInText 1s ease-in-out;
+        }
+
+        ul {
+            text-align: left;
+            margin: 15px 0;
+            padding-left: 20px;
+            color: #a5d6a7;
+            animation: fadeInText 1s ease-in-out;
+        }
+
+        .features-title {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 22px;
+            color: #ffeb3b;
+            animation: fadeInText 1s ease-in-out, colorChange 3s infinite alternate;
+        }
+
+        .info-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .info-box h2 {
+            color: #f1c40f;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            color: #f0f0f0;
+            animation: fadeInText 1s ease-in-out;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #e74c3c;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .download-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+
+        .download-btn:active {
+            background-color: #b71c1c;
+            transform: scale(0.9);
+        }
+
+        .footer {
+            background-color: #004e90;
+            color: #fff;
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0.5em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transform: translateY(15px);
+           transition: all 0.8s ease-out;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes colorChange {
+            from { color: #ffeb3b; }
+            to { color: #ffc107; }
+        }
+
+        @media (max-width: 768px) {
+            .outer-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .features-title {
+                font-size: 20px;
+            }
+
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                transform: translateY(10px);
+            transition: all 0.6s ease-out;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .modal a:hover {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer-container">
+        <h1>প্রানের মানিকগঞ্জ অ্যাপ</h1>
+        <p>প্রানের মানিকগঞ্জ অ্যাপটি বিশেষভাবে মানিকগঞ্জ জেলার সকল নাগরিকের সেবা প্রদান এবং তথ্য সরবরাহের উদ্দেশ্যে তৈরি করা হয়েছে। 
+           এই অ্যাপের মাধ্যমে আপনি নিম্নলিখিত ফিচারগুলির সুবিধা পাবেন:</p>
+
+        <div class="info-box">
+            <h2>জরুরি সেবা</h2>
+            <p>এই অ্যাপে আপনি জরুরি সময়ে প্রয়োজনীয় সকল নাম্বার যেমন পুলিশ, ফায়ার সার্ভিস, অ্যাম্বুলেন্স, বিদ্যুৎ বিভাগ সহ সকল গুরুত্বপূর্ণ নাম্বার পাবেন।</p>
+        </div>
+
+        <div class="info-box">
+            <h2>স্বাস্থ্যসেবা</h2>
+            <p>ডাক্তারের অ্যাপয়েন্টমেন্ট, টেলিমেডিসিন সেবা, রক্তদাতা তথ্য, হাসপাতালের লোকেশন সহ সকল স্বাস্থ্যসেবা তথ্য পাওয়া যাবে।</p>
+        </div>
+
+        <div class="info-box">
+            <h2>পর্যটন গাইড</h2>
+            <p>মানিকগঞ্জের দর্শনীয় স্থানসমূহের তথ্য, হোটেল ও রেস্তোরাঁর তথ্য সহ একটি সম্পূর্ণ পর্যটন গাইড উপলব্ধ।</p>
+        </div>
+
+        <div class="info-box">
+            <h2>বিভিন্ন সেবা</h2>
+            <p>কাস্টমার কেয়ার, অনলাইন ফর্ম সাবমিশন এবং অন্যান্য গুরুত্বপূর্ণ সেবা এক জায়গায় পাওয়া যাবে।</p>
+        </div>
+
+        <div class="info-box">
+            <h2>শিক্ষা ও প্রশিক্ষণ</h2>
+            <p>স্কুল, কলেজ, কোচিং সেন্টার এবং অন্যান্য শিক্ষা ও প্রশিক্ষণ সম্পর্কিত সকল তথ্য এখানে পাবেন।</p>
+        </div>
+
+   <a href="https://drive.google.com/file/d/1nDuEI9MRgk4L_uzr3lPPL86_Zp-C5Wlb/view?usp=drivesdk" class="download-btn">অ্যাপ ডাউনলোড করুন</a>
+        <p class="footer">© 2024 প্রানের মানিকগঞ্জ. সকল স্বত্ব সংরক্ষিত।</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelector('.slides');
+            const slideCount = slides.children.length;
+            currentSlide = (currentSlide + step + slideCount) % slideCount;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
+
+</body>
+</html>
